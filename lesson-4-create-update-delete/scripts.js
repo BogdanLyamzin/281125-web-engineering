@@ -36,3 +36,12 @@ const newUser = createUser({first_name: "Bohdan", last_name: "Liamzin"});
 console.log(newUser);
 newUser.first_name = "Bogdan";
 console.log(newUser.full_name); // console.log(newUser.full_name())
+
+const isLeapYear = year => {
+    const date = new Date(year, 2, 0);
+    return date.getDate() === 29;
+}
+
+console.log(isLeapYear(2026));
+console.log(isLeapYear(2004));
+console.log(isLeapYear(1900));
