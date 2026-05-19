@@ -58,6 +58,30 @@ products, delivery_state, delivery_city, delivery_address, delivery_postal_code,
 VALUES('Anna Muller', '+49 111 2222333', 'Berlin', 'Berlin', 'Alexandrplatz 1', '123456',
 'Printer 1; Mouse 2', 'Berlin', 'Berlin', 'Alexandrplatz 1', '123456', 25.00);
 
+TRUNCATE orders;
+
+ALTER TABLE orders DROP products;
+
+CREATE TABLE order_items (
+	order_id INT NOT NULL,
+    product_name VARCHAR(200) NOT NULL,
+    quantity INT NOT NULL CHECK (quantity > 0),
+    
+    PRIMARY KEY(order_id, product_name),
+    
+    FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE
+);
+
+INSERT INTO orders 
+(customer_name, customer_phone, customer_state, customer_city, customer_address, customer_postal_code, 
+delivery_state, delivery_city, delivery_address, delivery_postal_code, delivery_cost)
+VALUES('Anna Muller', '+49 111 2222333', 'Berlin', 'Berlin', 'Alexandrplatz 1', '123456',
+'Berlin', 'Berlin', 'Alexandrplatz 1', '123456', 25.00);
+
+INSERT INTO order_items (order_id, product_name, quantity)
+VALUES
+(1, 'Printer', 1),
+(1, 'Mouse', 2);
  
  
  
