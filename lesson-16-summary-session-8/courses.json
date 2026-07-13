@@ -1,0 +1,30 @@
+[
+  {
+    "_id": { "$oid": "672000000000000000000001" },
+    "title": "JavaScript Basics",
+    "category": "programming",
+    "price": 200,
+    "durationWeeks": 6
+  },
+  {
+    "_id": { "$oid": "672000000000000000000002" },
+    "title": "MongoDB Start",
+    "category": "database",
+    "price": 250,
+    "durationWeeks": 5
+  },
+  {
+    "_id": { "$oid": "672000000000000000000003" },
+    "title": "React Fundamentals",
+    "category": "frontend",
+    "price": 300,
+    "durationWeeks": 8
+  },
+  {
+    "_id": { "$oid": "672000000000000000000004" },
+    "title": "Node.js Backend",
+    "category": "backend",
+    "price": 350,
+    "durationWeeks": 7
+  }
+]
